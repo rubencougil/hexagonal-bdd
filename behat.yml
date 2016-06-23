@@ -1,0 +1,18 @@
+default:
+    suites:
+        system:
+            context:
+                - WebFeatureContext
+                - Behat\MinkExtension\Context\MinkContext
+            filters:
+                tags: '@critical'
+        acceptance:
+            context:
+                - FeatureContext
+
+    extensions:
+        Behat\MinkExtension:
+            base_url: http://192.168.33.99/app_dev.php
+            sessions:
+                deafault:
+                  goutte: ~
